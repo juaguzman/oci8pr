@@ -1,0 +1,147 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/05/2016, 09:15:05 PM
+    Author     : juan
+*/
+
+div
+{
+  margin: 20px auto;
+  width: 300px;
+  padding: 30px 25px;
+  background: white;
+  border: 1px solid #c4c4c4;
+}
+
+div.mnd
+{
+  margin: 20px auto;
+  width: 80%;
+  padding: 30px 25px;
+  background: #c4c4c4;
+  border: 1px solid #c4c4c4;
+}
+
+h1.crr-title 
+{
+  margin: -28px -25px 25px;
+  padding: 15px 25px;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: 300;
+  color: #ADADAD;
+  text-align:center;
+  background: #f7f7f7;
+ 
+}
+
+.error 
+{
+    font-size: 12px;
+    color: red;
+}
+
+
+div.tbl
+{
+  margin:0 auto;
+        margin-top: 2%;
+	width:80%;
+        background: #c4c4c4;
+	
+}
+.tbl table
+{
+margin: 0px;
+padding: 0px;
+border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+height: 100%;
+}
+
+.tbl tr:last-child td:last-child 
+{
+	-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+border-bottom-right-radius: 0px;
+}
+
+.tbl table tr:first-child td:first-child {
+	-moz-border-radius-topleft: 0px;
+-webkit-border-top-left-radius: 0px;
+border-top-left-radius: 0px;
+}
+.tbl table tr:first-child td:last-child {
+	-moz-border-radius-topright: 0px;
+-webkit-border-top-right-radius: 0px;
+border-top-right-radius: 0px;
+}
+
+.tbl tr:last-child td:first-child{
+	-moz-border-radius-bottomleft: 0px;
+-webkit-border-bottom-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+.tbl tr:hover td
+{
+	
+}
+.tbl tr:nth-child(odd){background-color: #F0776C; }
+.tbl tr:nth-child(even)    { background-color: #ffffff; }
+.tbl td
+{
+vertical-align:middle;
+border:0px solid #000000;
+border-width: 0px 1px 1px 0px;
+text-align: center;
+padding: 9px;
+font-size: 12px;
+font-family: Arial;
+color: #000000;
+}
+.tbl tr:last-child td
+{
+	border-width:0px 1px 0px 0px;
+}
+.tbl tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}
+.tbl tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.tbl tr:first-child td
+{
+background:-o-linear-gradient(bottom, #990000 5%, #ffffff 100%);
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #990000), color-stop(1, #ffffff));
+background:-moz-linear-gradient(center top, #990000 5%, #ffffff 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#990000", endColorstr="#ffffff");
+background: -o-linear-gradient(top,#990000, #ffffff);
+background-color: #990000;
+border: 0px solid #000000;
+text-align: center;
+border-width: 0px 0px 1px 1px;
+font-size: 18px;
+font-family: Arial Black;
+color: #000000;
+}
+.tbl tr:first-child:hover td
+{
+background:-o-linear-gradient(bottom, #990000 5%, #ffffff 100%);
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #990000), color-stop(1, #ffffff));
+background:-moz-linear-gradient(center top, #990000 5%, #ffffff 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#990000", endColorstr="#ffffff");
+background: -o-linear-gradient(top,#990000, #ffffff);
+background-color: #F0776C;
+}
+.tbl tr:first-child td:first-child
+{
+	border-width:0px 0px 1px 0px;
+}
+.tbl tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
