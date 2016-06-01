@@ -64,7 +64,7 @@ and open the template in the editor.
     <body>
         <div class="mnd">
             <?php include './header.php';?>
-            <form action="prefactura2.php" method="POST">
+            <form action="prefactura.php" method="POST">
                 <div class="tbl">
                     <table>
                         <thead>
@@ -78,9 +78,9 @@ and open the template in the editor.
                             <tr><td colspan="7">Informacion Comprador</td></tr>
                         <tr>
                             <td><input type="number" name="ceducl" required id="auto2" placeholder="Cedula Cliente" value="<?php if(isset($cedcl)){echo $cedcl;}?>"/></td>
-                            <td colspan="3"><input type="text" name="nomcl" id="nomb" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
-                            <td colspan="2" ><input type="text" name="dircl" id="dir" placeholder="Direccion"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
-                            <td><input type="number" name="telcl" placeholder="Celular" id="cel"   value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
+                            <td colspan="3"><input type="text" required name="nomcl" id="nomb" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
+                            <td colspan="2" ><input type="text" required name="dircl" id="dir" placeholder="Direccion"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
+                            <td><input type="number" name="telcl" required placeholder="Celular" id="cel"   value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
                         </tr>
                    
                         </tbody> 
