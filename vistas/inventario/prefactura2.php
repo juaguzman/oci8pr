@@ -75,10 +75,10 @@ and open the template in the editor.
             <td>Celular</td>
             </tr>
             <tr>
-                <td><input value="<?php $cedcl?>"></td>
-                <td><input value="<?php $nomcl?>"></td>
-                <td><input value="<?php $dircl?>"</td>
-                <td><input value="<?php $telc1?>"</td> 
+                <td><input value="<?php echo $cedcl; ?>" name="cedc1"></td>
+                <td><input value="<?php echo $nomcl; ?>" name="nomc1"></td>
+                <td><input value="<?php echo $dircl; ?>" name="dirc1"> </td>
+                <td><input value="<?php echo $telc1; ?>" name="telc1"></td> 
             </tr>
             </tbody>
             <tfoot>
