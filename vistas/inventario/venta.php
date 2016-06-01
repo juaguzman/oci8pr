@@ -49,9 +49,8 @@ and open the template in the editor.
                 $("#auto").autocomplete({
                     source: "search_1.php",
                     minLength: 1
-                });                
-
-            });
+                });  
+                   });
         </script>
         <script type="text/javascript">
         $(function()
@@ -61,21 +60,7 @@ and open the template in the editor.
                     source: "search_2.php",
                     minLength: 0
                 }); 
-                
-                $("#matricula").focusout(function(){
-                $.ajax({
-                 url:'alumno.php',
-                 type:'POST',
-                 dataType:'json',
-                data:{ matricula:$('#matricula').val()}
-                }).done(function(respuesta){
-                    $("#nombre").val(respuesta.nombre);
-                    $("#paterno").val(respuesta.paterno);
-                    $("#materno").val(respuesta.materno);
-                    });
-                    });
-
-            });
+                 });
         </script>
         <meta charset="UTF-8">
         <title>Sistema de Facturacion</title>
@@ -200,9 +185,9 @@ and open the template in the editor.
                             <tr><td colspan="7">Informacion Comprador</td></tr>
                         <tr>
                             <td><input type="number" name="ceducl" id="auto2" placeholder="Cedula Cliente" value="<?php if(isset($cedcl)){echo $cedcl;}?>"/></td>
-                            <td colspan="3"><input type="text" name="nomcl" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
-                            <td colspan="2" ><input type="text" name="dircl" placeholder="Direccion"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
-                            <td><input type="number" name="telcl" placeholder="Celular"    value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
+                            <td colspan="3"><input type="text" name="nomcl" id="nomb" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
+                            <td colspan="2" ><input type="text" name="dircl" id="dir" placeholder="Direccion"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
+                            <td><input type="number" name="telcl" placeholder="Celular" id="cel"   value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
                         </tr>
                    
                         </tbody> 
