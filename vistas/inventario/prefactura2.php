@@ -82,21 +82,27 @@ and open the template in the editor.
             </tr>
             </tbody>
             <tfoot>
-                <tr><td>Items Facturados</td></tr>
-                <tr><td>id</td></tr>
+                <tr><td colspan="4">Items Facturados</td></tr>
+                <tr><td>id</td><td>Precio C/U</td><td>Cantidad</td><td>Valor Total</td></tr>
             <?php 
             $longitud= count($idV);
+            $sumtot=0;
+            $sumpar=0;
                     for($i=0; $i<$longitud; $i++)
                     {
                         $cant=$canti[$i];
                         if($cant>=1)
                         {
                             echo "<tr>";
-                            echo "<td>$idV[$i]</td>";
+                            $sumpar=$pventa[$i]*$canti[$i];
+                            $sumtot=$sumtot+$sumpar;
+                            echo "<td>$idV[$i]</td><td>$pventa[$i]</td><td>$canti[$i]</td><td>$sumpar</td>";
+                            $sumpar=0;
                             echo "</tr>";
                         }
-                      
+            
                     } ?>
+                <tr><td colspan="3">TOTAL</td><td><?php echo "$sumtot"?></td></tr>
             </tfoot>
         </table>
                  </div>
