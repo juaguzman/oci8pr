@@ -16,6 +16,7 @@ if (isset($_POST['ceduvd'],$_POST['usern'],$_POST['ceduc1'],$_POST['nomc1'],$_PO
     $pventa = $_POST['pventa[]'];
     $cantidadC = $_POST['cantidadC[]'];
     
+    
 }
 
  

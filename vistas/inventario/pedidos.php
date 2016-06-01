@@ -82,8 +82,8 @@ if(isset($_SESSION["autentificado"]))
             <input class="login-input" type="text" name="dist" id="dist" required placeholder="Distribuidor"/><br>
             <input class="login-input" type='date'name='fecha' id='' required="fecha" placeholder="Fecha" /><br>
             <input class="login-input" type='number'name='cant' id='cant' required="" placeholder="Cantidad" /><br>
-            <input type='hidden' name='id_i' value='<?php  ?>' />
-            <a href="index.php"><input class="login-button" type="button" value="Pedir" onclick="" /></a> 
+            <input type='hidden' name='id_i' value='<?php echo $id;  ?>' />
+            <input type="submit" value="Fin Venta" class="login-button">
            
         </form>
         

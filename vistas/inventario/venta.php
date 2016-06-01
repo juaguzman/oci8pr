@@ -63,7 +63,7 @@ and open the template in the editor.
     <body>
         <div class="mnd">
             <?php include './header.php';?>
-            <form>
+            <form action="prefactura2.php" method="POST">
                 <div class="tbl">
                     <table>
                         <thead>
@@ -86,7 +86,7 @@ and open the template in the editor.
                     </table>  
                     <?php inventario::darInventarioVenta()?>
                      
-                    
+                    <input type="submit" value="Fin Venta" class="login-button">
                 </div>
             </form>
         </div>
