@@ -53,7 +53,21 @@ and open the template in the editor.
                     <td><img src="../imagenes/2.PNG" width="350pd" /></td>
                     <td><img src="../imagenes/3.PNG" width="350pd"/></td>
                 </tr>
+                 
+            </table>
+            <BR>
+            <BR>
+            <table>
+                <tr>
+                    <TD><img src="../imagenes/4.PNG" width="110%"/></TD>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <TD><img src="../imagenes/5.PNG" width="110%"/></TD>
+                </tr>
             </table>
         </div>
+        
     </body>
 </html>
