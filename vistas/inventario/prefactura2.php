@@ -81,9 +81,12 @@ and open the template in the editor.
             <td></td> 
             </tr>
             </tbody>
+            <tfoot>
+                <tr><td>Items Facturados</td></tr>
+                <tr><td>id</td></tr>
             <?php 
             $longitud= count($idV);
-      for($i=0; $i<$longitud; $i++)
+                    for($i=0; $i<$longitud; $i++)
                     {
                         $cant=$canti[$i];
                         if($cant>=1)
@@ -94,7 +97,7 @@ and open the template in the editor.
                         }
                       
                     } ?>
-            
+            </tfoot>
         </table>
                  </div>
      </div>
