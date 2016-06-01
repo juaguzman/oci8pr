@@ -52,25 +52,6 @@ and open the template in the editor.
                 });  
                    });
         </script>
-         <script type="text/javascript">
-                 $(function()
-                        {   
-                        //autocomplete
-                        $("#auto").focusout(function(){
-                            $.ajax({
-                          url:'search_2.php',
-                          type:'POST',
-                          dataType:'json',
-                          data:{ matricula:$('#auto').val()}
-                          }).done(function(respuesta){
-                          $("#nombre").val(respuesta.nombre);
-                          $("#paterno").val(respuesta.paterno);
-                          $("#materno").val(respuesta.materno);
-                      });
-                    });
-});
-                   });
-        </script>
         <script type="text/javascript">
         $(function()
             {   

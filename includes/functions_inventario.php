@@ -74,7 +74,7 @@ if (!$conn) {
         echo "<td><input name=modelo[] value='$row[MODELO]' readonly /></td>"; 
         echo "<td><input name=cantidad[] value='$row[CANTIDAD]' readonly /></td>";
         echo "<td><input name=pventa[] value='$row[PRECIO_VENTA]' readonly /></td>";
-        echo "<td><input name=cantidadC[] value='' /></td>";
+        echo "<td><input name=cantidadC[] requi /></td>";
         echo "</tr>";
         
     }
