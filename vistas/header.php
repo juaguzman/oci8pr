@@ -5,13 +5,12 @@
  </li>
  <li><a href="inventario/venta.php">Ventas</a></li>
  <li><a href="cliente/index.php">clientes</a>
-  <ul>
-   <li><a href="#">Services Sub Menu 1</a></li>
-   <li><a href="#">Services Sub Menu 2</a></li>
-   <li><a href="#">Services Sub Menu 3</a></li>
-   <li><a href="#">Services Sub Menu 4</a></li>
-  </ul>
+  
  </li>
  <li><a href="facturas/index.php">Facturacion</a></li>
- <li><a href="#">Balance</a></li>
+ <li><a href="#">Balace</a>
+<ul>
+    <li><a href="balance/pedido.php">Pedidos</a></li>  
+</ul>
+</li>
 </ul>

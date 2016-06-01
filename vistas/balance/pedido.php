@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <?php
 session_start;
 if(isset($_SESSION["autentificado"]))
@@ -43,17 +37,20 @@ if(isset($_SESSION["autentificado"]))
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
         <meta charset="UTF-8">
-        <title>Inventario Zapateria</title>
+        <title>pedido  Zapateria</title>
     </head>
     <body>
         <div class="mnd">
             <?php include './header.php';?>
             <div class="tbl">
              <?php
-                 inventario::darInventario();
+                 inventario::darpedido();
              ?>
             </div>    
         </div>
+        
+        
+        
        
     </body>
 </html>

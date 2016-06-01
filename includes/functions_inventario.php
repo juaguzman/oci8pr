@@ -81,6 +81,43 @@ if (!$conn) {
     echo "</table>\n";
 echo"</form>";
 }
+static function darpedido()
+{
+   $conn = oci_connect('zapateria', '5243', 'localhost/XE');
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+    
+    $sql = oci_parse($conn, 'SELECT * FROM pedidos');
+    //$stid = oci_parse($conn, $sql);
+    //oci_execute($stid);
+    //$didbv = 60;
+    //oci_bind_by_name($didbv);
+    oci_execute($sql);
+   
+    echo "<table border='1'>\n";
+    echo "<tr><td>N° pedido</td><td>Distribuidor</td><td>Fecha</td><td>Cantudad</td><td>N° inventarios</td></tr>";
+    while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
+//    while (($row = oci_fetch_array($sql, OCI_ASSOC)) != false) 
+    {   
+        echo "<tr>";
+        echo "<td>". $row['ID_PEDIDO'].'</td>';
+        echo "<td>". $row['DISTRIBUIDOR'].'</td>';
+        echo "<td>". $row['FECHA'].'</td>';
+        echo "<td>". $row['CANTIDAD'].'</td>';
+        echo "<td>". $row['ID_DISTRIBUIDOR'].'</td>';
+        echo "</tr>";
+        
+        //foreach ($row as $item) 
+    //{
+      //  echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "") . "</td>";
+    //}
+    //echo"<td> <a href='../inventario/pedidos.php'><img src='../../imagenes/anadir.png'></a></td>";
+    //echo "</tr>\n";
+}
+echo "</table>\n";
+}
 
 }
 
