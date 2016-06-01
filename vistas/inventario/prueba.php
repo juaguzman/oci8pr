@@ -39,123 +39,40 @@ and open the template in the editor.
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
         <link rel="stylesheet" href="../../styles/btns.css" />
-        <script src="http://code.jquery.com/jquery-1.8.2.js"></script>        
-        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-        <meta charset="UTF-8">
-        <title>Sistema de Facturacion</title>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>    
         <script type="text/javascript">
+        $(function()
+        {//autocomplete
+           $("#auto").autocomplete({
+                source: "search_1.php",
+                minLength: 1
+            });   
+            
+            $("#matricula").focusout(function(){
+                $.ajax({
+            url:'alumno.php',
+          type:'POST',
+          dataType:'json',
+          data:{ matricula:$('#matricula').val()}
+            }).done(function(respuesta){
+          $("#nombre").val(respuesta.nombre);
+          $("#paterno").val(respuesta.paterno);
+          $("#materno").val(respuesta.materno);
+            });
+                });
+         });
 
-        icremento =1;
-        function crear(obj) 
-        {
-          icremento++;
-
-          field = document.getElementById('field'); 
-         contenedor = document.createElement('tr'); 
-         contenedor.id = 'div'+icremento;
-//          contenedor.className = "divct";
-          field.appendChild(contenedor); 
-          
-          tr = document.createElement('td')
-          tr.id='trcod'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'text'; 
-          boton.placeholder = "Codigo";
-          boton.name = 'text'+'[]'; 
-          boton.className = 'form-field';
-          tr.appendChild(boton); 
-//          tr de marca
-          tr = document.createElement('td')
-          tr.id='trmar'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'text'; 
-          boton.placeholder = "Marca";
-          boton.name = 'textm'+'[]'; 
-          boton.className = 'form-field';
-          tr.appendChild(boton); 
-//          tr de modelo
-          tr = document.createElement('td')
-          tr.id='trmar'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'text'; 
-          boton.placeholder = "Modelo";
-          boton.name = 'textmo'+'[]'; 
-          boton.className = 'form-field';
-          tr.appendChild(boton);
-          
-//          tr de vvalor
-          tr = document.createElement('td')
-          tr.id='trvlr'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'text'; 
-          boton.placeholder = "Valor";
-          boton.name = 'textvl'+'[]'; 
-          boton.className = 'form-field';
-          tr.appendChild(boton);
-//          tr de cantidad
-          tr = document.createElement('td')
-          tr.id='trct'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'text'; 
-          boton.placeholder = "Cantidad";
-          boton.name = 'textcn'+'[]'; 
-          boton.className = 'form-field';
-          tr.appendChild(boton);
-          
-          //          tr de cantidad
-          tr = document.createElement('td')
-          tr.id='trto'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'text'; 
-          boton.placeholder = "Total";
-          boton.name = 'textto'+'[]'; 
-          boton.className = 'form-field';
-          tr.appendChild(boton);
-
-          
-//        tr de Eliminar
-          tr = document.createElement('td')
-          tr.id='trct'+icremento;
-          contenedor.appendChild(tr);
-
-          boton = document.createElement('input'); 
-          boton.type = 'button'; 
-          boton.value = ' - '; 
-          boton.name = 'div'+icremento; 
-          boton.className = 'submit-button-env';
-          boton.onclick = function () {borrar(this.name)} //aqui llamamos a la funcion borrar
-          tr.appendChild(boton); 
-          return contenedor.id;
-        }
-        function borrar(obj) {//aqui la ejecutamos
-          field = document.getElementById('field'); 
-          field.removeChild(document.getElementById(obj)); 
-        }
-        
-   $(document).ready(function(){
-    $( "#ceducl" ).autocomplete({
-      source: "buscarItem.php",
-      minLength: 2
-    });
-</script>
+        });
+        </script>
     </head>
     <body>
         <div class="mnd">
             <?php include './header.php';?>
+                <form action='' method='post'>
+                    
+                </form>
             <form>
                 <div class="tbl">
                     <table>
@@ -169,7 +86,7 @@ and open the template in the editor.
                         <tbody>
                             <tr><td colspan="7">Informacion Comprador</td></tr>
                         <tr>
-                            <td><input type="text" name="ceducl" placeholder="Cedula Cliente" value="<?php if(isset($cedcl)){echo $cedcl;}?>"/></td>
+                            <td><input type="text" name="ceducl" id="auto" placeholder="Cedula Cliente" class="auto" value="<?php if(isset($cedcl)){echo $cedcl;}?>"/></td>
                             <td colspan="3"><input type="text" name="nomcl" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
                             <td colspan="2" ><input type="text" name="dircl" placeholder="Direccion"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
                             <td><input type="number" name="telcl" placeholder="Celular"    value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
@@ -197,7 +114,7 @@ and open the template in the editor.
                          </tr>
                             <tr>
                                 <td>                                
-                                    <input type="text" name="text[]" class="form-field" placeholder="Codigo"/>                       
+                                    <input type='text' name='country' value='' class='auto' placeholder="Codigo"></p>                       
                                 </td>
                                 <td>                                
                                     <input type="text" name="textm[]" class="form-field" placeholder="Marca"/>                       
