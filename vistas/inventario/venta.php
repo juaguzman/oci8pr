@@ -52,6 +52,25 @@ and open the template in the editor.
                 });  
                    });
         </script>
+         <script type="text/javascript">
+                 $(function()
+                        {   
+                        //autocomplete
+                        $("#auto").focusout(function(){
+                            $.ajax({
+                          url:'search_2.php',
+                          type:'POST',
+                          dataType:'json',
+                          data:{ matricula:$('#auto').val()}
+                          }).done(function(respuesta){
+                          $("#nombre").val(respuesta.nombre);
+                          $("#paterno").val(respuesta.paterno);
+                          $("#materno").val(respuesta.materno);
+                      });
+                    });
+});
+                   });
+        </script>
         <script type="text/javascript">
         $(function()
             {   
@@ -85,7 +104,7 @@ and open the template in the editor.
           boton.type = 'text'; 
           boton.placeholder = "Codigo";
           boton.name = 'text'+'[]'; 
-          boton.className = 'form-field ui-autocomplete-input';
+          boton.className = 'form-field';
           boton.id='auto';
           tr.appendChild(boton); 
 //          tr de marca
