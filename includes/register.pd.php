@@ -21,7 +21,7 @@ if (isset($_POST['id_p'],$_POST['dist'],$_POST['fecha'], $_POST['cant'],$_POST['
         oci_bind_by_name($stid,":id_p", $id_p);
         oci_bind_by_name($stid, ":dist", $dist);
         oci_bind_by_name($stid, ":fecha", $fecha);
-        oci_bind_by_name($stid, ":cant", $can);
+        oci_bind_by_name($stid, ":cant", $cant);
         if (oci_execute($stid)) 
         {
             oci_commit($conn);
