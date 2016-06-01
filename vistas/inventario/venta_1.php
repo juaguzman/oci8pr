@@ -43,6 +43,34 @@ and open the template in the editor.
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>    
         <script type="text/javascript">
+        $(function()
+            {   
+                //autocomplete
+                $("#auto").autocomplete({
+                    source: "search_1.php",
+                    minLength: 1
+                });  
+                   });
+        </script>
+         <script type="text/javascript">
+                 $(function()
+                        {   
+                        //autocomplete
+                        $("#auto").focusout(function(){
+                            $.ajax({
+                          url:'search_2.php',
+                          type:'POST',
+                          dataType:'json',
+                          data:{ matricula:$('#auto').val()}
+                          }).done(function(respuesta){
+                          $("#nombre").val(respuesta.nombre);
+                          $("#paterno").val(respuesta.paterno);
+                          $("#materno").val(respuesta.materno);
+                      });
+                    });
+});
+                   });
+        </script>
         <script type="text/javascript">
         $(function()
             {   
@@ -55,7 +83,109 @@ and open the template in the editor.
         </script>
         <meta charset="UTF-8">
         <title>Sistema de Facturacion</title>
+        <script type="text/javascript">
 
+        icremento =1;
+        function crear(obj) 
+        {
+          icremento++;
+
+          field = document.getElementById('field'); 
+         contenedor = document.createElement('tr'); 
+         contenedor.id = 'div'+icremento;
+//          contenedor.className = "divct";
+          field.appendChild(contenedor); 
+          
+          tr = document.createElement('td')
+          tr.id='trcod'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'text'; 
+          boton.placeholder = "Codigo";
+          boton.name = 'text'+'[]'; 
+          boton.className = 'form-field';
+          boton.id='auto';
+          tr.appendChild(boton); 
+//          tr de marca
+          tr = document.createElement('td')
+          tr.id='trmar'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'text'; 
+          boton.placeholder = "Marca";
+          boton.name = 'textm'+'[]'; 
+          boton.className = 'form-field';
+          tr.appendChild(boton); 
+//          tr de modelo
+          tr = document.createElement('td')
+          tr.id='trmar'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'text'; 
+          boton.placeholder = "Modelo";
+          boton.name = 'textmo'+'[]'; 
+          boton.className = 'form-field';
+          tr.appendChild(boton);
+          
+//          tr de vvalor
+          tr = document.createElement('td')
+          tr.id='trvlr'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'text'; 
+          boton.placeholder = "Valor";
+          boton.name = 'textvl'+'[]'; 
+          boton.className = 'form-field';
+          tr.appendChild(boton);
+//          tr de cantidad
+          tr = document.createElement('td')
+          tr.id='trct'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'text'; 
+          boton.placeholder = "Cantidad";
+          boton.name = 'textcn'+'[]'; 
+          boton.className = 'form-field';
+          tr.appendChild(boton);
+          
+          //          tr de cantidad
+          tr = document.createElement('td')
+          tr.id='trct'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'text'; 
+          boton.placeholder = "Total";
+          boton.name = 'textto'+'[]'; 
+          boton.className = 'form-field';
+          tr.appendChild(boton);
+          
+//        tr de Eliminar
+          tr = document.createElement('td')
+          tr.id='trct'+icremento;
+          contenedor.appendChild(tr);
+
+          boton = document.createElement('input'); 
+          boton.type = 'button'; 
+          boton.value = ' - '; 
+          boton.name = 'div'+icremento; 
+          boton.className = 'submit-button-env';
+          boton.onclick = function () {borrar(this.name)} //aqui llamamos a la funcion borrar
+          tr.appendChild(boton); 
+          return contenedor.id;
+        }
+        function borrar(obj) {//aqui la ejecutamos
+          field = document.getElementById('field'); 
+          field.removeChild(document.getElementById(obj)); 
+        }
+        
+       
+</script>
     </head>
     <body>
         <div class="mnd">
