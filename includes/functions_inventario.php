@@ -70,7 +70,7 @@ if (!$conn) {
     {   
         echo "<tr>";
         echo "<td><input name=id value='$row[ID_INVENTARIO]'/></td>";
-        echo "<td> <input name=marca value='$row[MARCA]'/></td>";
+        echo "<td> <input name=marca value='$row[MARCA]' /></td>";
         echo "<td><input name=modelo value='$row[MODELO]'/></td>"; 
         echo "<td><input name=cantidad value='$row[CANTIDAD]'/></td>";
         echo "<td><input name=pventa value='$row[PRECIO_VENTA]'/></td>";
