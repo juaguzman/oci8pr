@@ -19,7 +19,10 @@ if(isset($_SESSION["autentificado"]))
                     header("Location:../sesionCerrada.html");
                     return false;
                 }
-            else{$_SESSION["ultimoAcceso"] = $ahora;} 
+            else{
+                $_SESSION["ultimoAcceso"] = $ahora;
+                include '../../includes/functions_inventario.php';
+            } 
             }
     }
         else
@@ -82,50 +85,7 @@ and open the template in the editor.
                         </tbody> 
                     </table>  
                     
-                    <table>
-                            <tbody id="field" >
-                            <tr><td colspan="7">Items a Facturar</td></tr>
-                            <tr>
-                            <td>Codigo</td>
-                            <td>Marca</td>
-                            <td>Modelo</td>
-                            <td>Valor</td>
-                            <td>Cantidad</td>
-                            <td>Total</td>
-                            <td>Eliminar</td>
-                            </tr>
-                             <tr>
-                            <td colspan="7">
-                         <input class="login-btn" type="button" value="Nueva Item" onClick="crear(this)">
-                            </td>
-                         </tr>
-                            <tr>
-                                <td >                                
-                                    <input type='text' name='txt[]' value='' id="auto" class="form-field" placeholder="Codigo">                     
-                                </td>
-                                <td>                                
-                                    <input type="text" name="textm[]" class="form-field" placeholder="Marca"/>                       
-                                </td>
-                                <td>                                
-                                    <input type="text" name="textmo[]" class="form-field" placeholder="Modelo"/>                       
-                                </td>
-                                <td>                                
-                                    <input type="number" name="textvl[]" class="form-field" placeholder="Valor"/>                       
-                                </td>
-                                  <td>                                
-                                    <input type="text" name="textcn[]" class="form-field" placeholder="Cantidad"/>                       
-                                </td>
-                                 <td>                                
-                                    <input type="text" name="textto[]" class="form-field" placeholder="Total"/>                       
-                                </td>
-                                 <td></td>                                
-                            </tr>
-                           
-                            </tbody>  
-                              <tfoot>
-                                 
-                        </tfoot>
-                        </table>  
+                     
                     
                 </div>
             </form>
