@@ -49,22 +49,21 @@ and open the template in the editor.
         <div class="contenidot">
             <table >
                 <tr>
-                    <td><img src="../imagenes/1.PNG" width="350pd"/></td>
-                    <td><img src="../imagenes/2.PNG" width="350pd" /></td>
-                    <td><img src="../imagenes/3.PNG" width="350pd"/></td>
+                    <td><img src="../imagenes/1.PNG" width="100%" /></td>
+                    <td><img src="../imagenes/2.PNG" width="100%"  /></td>
+                    <td><img src="../imagenes/3.PNG" width="100%"/></td>
                 </tr>
-                 
             </table>
             <BR>
             <BR>
             <table>
                 <tr>
-                    <TD><img src="../imagenes/4.PNG" width="110%"/></TD>
+                    <TD><img src="../imagenes/4.PNG" width="130%"/></TD>
                 </tr>
             </table>
             <table>
                 <tr>
-                    <TD><img src="../imagenes/5.PNG" width="110%"/></TD>
+                    <TD><img src="../imagenes/5.PNG" width="130%"/></TD>
                 </tr>
             </table>
         </div>
