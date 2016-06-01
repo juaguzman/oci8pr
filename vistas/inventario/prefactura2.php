@@ -62,10 +62,13 @@ and open the template in the editor.
          <div class="mnd">
             <?php include './header.php';?>
              <div class="tbl">
+                 <form>
         <table>
             <thead>
                 <tr><td colspan="4">Factura Final</td></tr>
                 <tr><td colspan="2">Cedula vendedor</td><td colspan="2">Usuario</td></tr>
+                <tr><td colspan="2"><input value="<?php echo $ceduvd; ?>" name="cedvd" readonly/></td>
+                    <td colspan="2"><input value="<?php echo $usern; ?>" name="cedvd" readonly/></td></tr>
             </thead>
             <tbody>
             <tr>
@@ -97,14 +100,22 @@ and open the template in the editor.
                             $sumpar=$pventa[$i]*$canti[$i];
                             $sumtot=$sumtot+$sumpar;
                             echo "<td>$idV[$i]</td><td>$pventa[$i]</td><td>$canti[$i]</td><td>$sumpar</td>";
+                            
+                            ?>
+                            <input type="hidden" value="<?php echo "$idV[$i]";?>" name="ids[]" />
+                            <input type="hidden" value="<?php echo "$canti[$i]";?>" name="cant[]"/>
+                            <input type="hidden" value="<?php echo "$sumpar[$i]";?>" name="totpar[]" />
+                            <?php
                             $sumpar=0;
                             echo "</tr>";
                         }
             
                     } ?>
                 <tr><td colspan="3">TOTAL</td><td><?php echo "$sumtot"?></td></tr>
+                 <input type="hidden" value="<?php echo "$sumtot";?>" name="tot" />
             </tfoot>
         </table>
+            </form>
                  </div>
      </div>
     </body>
