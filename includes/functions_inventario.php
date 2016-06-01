@@ -77,12 +77,6 @@ if (!$conn) {
         echo "<td><input name=cantidadC[] value='' /></td>";
         echo "</tr>";
         
-        //foreach ($row as $item) 
-    //{
-      //  echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "") . "</td>";
-    //}
-    //echo"<td> <a href='../inventario/pedidos.php'><img src='../../imagenes/anadir.png'></a></td>";
-    //echo "</tr>\n";
     }
     echo "</table>\n";
 echo"</form>";
