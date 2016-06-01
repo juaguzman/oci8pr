@@ -84,7 +84,7 @@ and open the template in the editor.
                    
                         </tbody> 
                     </table>  
-                    
+                    <?php inventario::darInventarioVenta()?>
                      
                     
                 </div>
