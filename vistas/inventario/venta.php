@@ -64,7 +64,7 @@ and open the template in the editor.
     <body>
         <div class="mnd">
             <?php include './header.php';?>
-            <form action="prefactura.php" method="POST">
+            <form action="prefactura2.php" method="POST">
                 <div class="tbl">
                     <table>
                         <thead>

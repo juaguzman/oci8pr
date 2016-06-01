@@ -42,7 +42,7 @@ if (isset($_POST['ceduvd'],$_POST['usern'],$_POST['ceducl'],$_POST['nomcl'],$_PO
                 $telc1 = filter_input(INPUT_POST, 'telcl', FILTER_SANITIZE_NUMBER_INT);
                 $idV = $_POST[ 'id'];
                 $pventa = $_POST['pventa'];
-                $cantidadC = $_POST['cantidadC'];
+                $canti = $_POST['cantidadC'];
 ?>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -61,29 +61,43 @@ and open the template in the editor.
     <body>
          <div class="mnd">
             <?php include './header.php';?>
-         </div>
+             <div class="tbl">
         <table>
-            <td>
-            <tr>Cedula vendedor</tr>
-            <tr>Usuario</tr>
-            <tr> Cedula Comprador</tr>
-            <tr>Nombre del Comprador</tr>
-            <tr>Direccion de Comprador</tr>
-            <tr>Celular</tr>
-           <tr>Numero Venta</tr>
-            <trCantidad comprada  <#3>
-                     
-            </td>
-            for($i=0;$i<count($cedudv);$i++)
-            {
+            <thead>
+                <tr><td colspan="4">Factura Final</td></tr>
+                <tr><td colspan="2">Cedula vendedor</td><td colspan="2">Usuario</td></tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td> Cedula Comprador</td>
+            <td>Nombre del Comprador</td>
+            <td>Direccion de Comprador</td>
+            <td>Celular</td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td> 
+            </tr>
+            </tbody>
+            <?php 
+            $longitud= count($idV);
+      for($i=0; $i<$longitud; $i++)
+                    {
+                        $cant=$canti[$i];
+                        if($cant>=1)
+                        {
+                            echo "<tr>";
+                            echo "<td>$idV[$i]</td>";
+                            echo "</tr>";
+                        }
+                      
+                    } ?>
             
-            }
-            
-            <td>
-            <tr>.$row[]
-            </td>
         </table>
-            
+                 </div>
+     </div>
     </body>
 </html>
 <?php } else {}   ?>
