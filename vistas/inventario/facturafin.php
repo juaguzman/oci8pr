@@ -31,10 +31,4 @@ if(isset($_SESSION["autentificado"]))
                 header("Location:../sesionCerrada.html");
                 return false;
             }
-if (isset($_POST['id'],$_POST['cant'],$_POST['val'],$_POST['cedc'],$_POST['ceduvd']) 
-{
-    $ceduvd = filter_input(INPUT_POST, 'ceduvd', FILTER_SANITIZE_NUMBER_INT);
-    
-
-    
-}
+//if (isset($_POST['id'],$_POST['cant'],$_POST['val'],$_POST['cedc'],$_POST['ceduvd']) 
