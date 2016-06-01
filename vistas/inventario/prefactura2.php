@@ -59,6 +59,31 @@ and open the template in the editor.
         <title>Sistema de Facturacion</title>
     </head>
     <body>
+         <div class="mnd">
+            <?php include './header.php';?>
+         </div>
+        <table>
+            <td>
+            <tr>Cedula vendedor</tr>
+            <tr>Usuario</tr>
+            <tr> Cedula Comprador</tr>
+            <tr>Nombre del Comprador</tr>
+            <tr>Direccion de Comprador</tr>
+            <tr>Celular</tr>
+           <tr>Numero Venta</tr>
+            <trCantidad comprada  <#3>
+                     
+            </td>
+            for($i=0;$i<count($cedudv);$i++)
+            {
+            
+            }
+            
+            <td>
+            <tr>.$row[]
+            </td>
+        </table>
+            
     </body>
 </html>
 <?php } else {}   ?>
