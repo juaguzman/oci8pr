@@ -26,7 +26,8 @@ if (!$conn) {
     echo "<tr><td>Codigo</td><td>Marca</td><td>Modelo</td><td>Disponibles</td><td>Precio Venta</td><td>Precio Compra</td><td>Pedido</td></tr>";
     while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
 //    while (($row = oci_fetch_array($sql, OCI_ASSOC)) != false) 
-    {
+    {   
+        echo "<tr>";
         echo "<td>". $row['ID_INVENTARIO'].'</td>';
         echo "<td>". $row['MARCA'].'</td>';
         echo "<td>". $row['MODELO'].'</td>';
@@ -34,6 +35,7 @@ if (!$conn) {
         echo "<td>". $row['PRECIO_VENTA'].'</td>';
         echo "<td>". $row['PRECIO_COMPRA'].'</td>';
         echo "<td><a href=../inventario/pedidos.php?Id=".$row['ID_INVENTARIO']."><img src=../../imagenes/anadir.png></a></td>";
+        echo "</tr>";
         
         //foreach ($row as $item) 
     //{

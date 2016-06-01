@@ -1,4 +1,5 @@
-<ul id="menu-bar">
+<img src="../imagenes/BANNER.jpg" width="96%"/>
+<ul id="menu-bar" >
     <li class="active"><a href="index.php">Home</a></li>
     <li><a href="inventario/index.php">Inventario</a>
  </li>

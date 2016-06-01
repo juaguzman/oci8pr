@@ -22,9 +22,11 @@ echo "<table border='1'>\n";
 echo "<tr><td>N° de Factura</td><td>Cedula del Cliente</td><td>Nick Cliente</td></tr>";
 while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
 {
+    echo "<tr>";
     echo "<td>". $row['ID_FACTURA'].'</td>';
     echo "<td>". $row['CEDULA_CLIENTE'].'</td>';
     echo "<td>". $row['NICK'].'</td>';
+    echo "</tr>";
 }
     echo "</table>\n";
 }

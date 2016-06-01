@@ -38,12 +38,22 @@ and open the template in the editor.
         <link rel="stylesheet" href="../styles/login_style.css" />
         <link rel="stylesheet" href="../styles/mndstyle.css" />
         <link rel="stylesheet" href="../styles/menuvar.css" />
+        <link rel="stylesheet" href="../styles/index.css" />
         <meta charset="UTF-8">
         <title>Sistema de Facturacion</title>
     </head>
     <body>
         <div class="mnd">
             <?php include './header.php';?>
+        </div>
+        <div class="contenidot">
+            <table >
+                <tr>
+                    <td><img src="../imagenes/1.PNG" width="350pd"/></td>
+                    <td><img src="../imagenes/2.PNG" width="350pd" /></td>
+                    <td><img src="../imagenes/3.PNG" width="350pd"/></td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>
