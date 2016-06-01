@@ -15,18 +15,17 @@ if (!$conn) {
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
 
-$stid = oci_parse($conn, 'select * from clientes');
-oci_execute($stid);
+$sql = oci_parse($conn, 'SELECT * FROM clientes');
+oci_execute($sql);
 
 echo "<table border='1'>\n";
 echo "<tr><td>Cedula</td><td>Nombres</td><td>Apellido</td><td>Celular</td><td>Email</td></tr>";
-while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-    echo "<tr>\n";
-    foreach ($row as $item) 
-    {
-        echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "") . "</td>\n";
-    }
-    echo "</tr>\n";
+while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) {
+        echo "<td>". $row['CEDULA_CLIENTE'].'</td>';
+        echo "<td>". $row['NOMBRES'].'</td>';
+        echo "<td>". $row['APELIDOS'].'</td>';
+        echo "<td>". $row['CELULAR'].'</td>';
+        echo "<td>". $row['EMAIL'].'</td>';      
 }
 echo "</table>\n";
 }

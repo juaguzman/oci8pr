@@ -15,18 +15,32 @@ if (!$conn) {
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
     
-   $stid = oci_parse($conn, 'SELECT * FROM inventario');
-oci_execute($stid);
-
-echo "<table border='1'>\n";
-echo "<tr><td>Codigo</td><td>Marca</td><td>Modelo</td><td>Disponibles</td><td>Precio Venta</td><td>Precio Compra</td></tr>";
-while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-    echo "<tr>\n";
-    foreach ($row as $item) 
+    $sql = oci_parse($conn, 'SELECT * FROM inventario');
+    //$stid = oci_parse($conn, $sql);
+    //oci_execute($stid);
+    //$didbv = 60;
+    //oci_bind_by_name($didbv);
+    oci_execute($sql);
+   
+    echo "<table border='1'>\n";
+    echo "<tr><td>Codigo</td><td>Marca</td><td>Modelo</td><td>Disponibles</td><td>Precio Venta</td><td>Precio Compra</td><td>Pedido</td></tr>";
+    while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
+//    while (($row = oci_fetch_array($sql, OCI_ASSOC)) != false) 
     {
-        echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "") . "</td>\n";
-    }
-    echo "</tr>\n";
+        echo "<td>". $row['ID_INVENTARIO'].'</td>';
+        echo "<td>". $row['MARCA'].'</td>';
+        echo "<td>". $row['MODELO'].'</td>';
+        echo "<td>". $row['CANTIDAD'].'</td>';
+        echo "<td>". $row['PRECIO_VENTA'].'</td>';
+        echo "<td>". $row['PRECIO_COMPRA'].'</td>';
+        echo "<td><a href=../inventario/pedidos.php?Id=".$row['ID_INVENTARIO']."><img src=../../imagenes/anadir.png></a></td>";
+        
+        //foreach ($row as $item) 
+    //{
+      //  echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "") . "</td>";
+    //}
+    //echo"<td> <a href='../inventario/pedidos.php'><img src='../../imagenes/anadir.png'></a></td>";
+    //echo "</tr>\n";
 }
 echo "</table>\n";
 }
