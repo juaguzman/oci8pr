@@ -3,6 +3,7 @@
     <li class="active"><a href="index.php">Home</a></li>
     <li><a href="inventario/index.php">Inventario</a>
  </li>
+ <li><a href="../inventario/venta.php">Ventas</a></li>
  <li><a href="cliente/index.php">clientes</a>
   <ul>
    <li><a href="#">Services Sub Menu 1</a></li>
