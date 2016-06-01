@@ -60,7 +60,20 @@ and open the template in the editor.
                 $("#auto2").autocomplete({
                     source: "search_2.php",
                     minLength: 0
-                });                
+                }); 
+                
+                $("#matricula").focusout(function(){
+                $.ajax({
+                 url:'alumno.php',
+                 type:'POST',
+                 dataType:'json',
+                data:{ matricula:$('#matricula').val()}
+                }).done(function(respuesta){
+                    $("#nombre").val(respuesta.nombre);
+                    $("#paterno").val(respuesta.paterno);
+                    $("#materno").val(respuesta.materno);
+                    });
+                    });
 
             });
         </script>
