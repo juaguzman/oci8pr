@@ -78,10 +78,11 @@ if(isset($_SESSION["autentificado"]))
           <form class="login" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>"  method="post" name="registration_form">
            
             <h1 class="login-title">Pedidos</h1>
+            <input type="hidden" name="id_p"/><br>
             <input class="login-input" type="text" name="dist" id="dist" required placeholder="Distribuidor"/><br>
             <input class="login-input" type='date'name='fecha' id='' required="fecha" placeholder="Fecha" /><br>
             <input class="login-input" type='number'name='cant' id='cant' required="" placeholder="Cantidad" /><br>
-            <input type='hidden' name='id' value='<?php  ?>' />
+            <input type='hidden' name='id_i' value='<?php  ?>' />
             <a href="index.php"><input class="login-button" type="button" value="Pedir" onclick="" /></a> 
            
         </form>

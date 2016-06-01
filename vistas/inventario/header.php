@@ -10,6 +10,6 @@
    <li><a href="#">Services Sub Menu 4</a></li>
   </ul>
  </li>
- <li><a href="#">Facturacion</a></li>
+ <li><a href="../facturas/index.php">Facturacion</a></li>
  <li><a href="#">Balance</a></li>
 </ul>
