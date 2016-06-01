@@ -39,33 +39,21 @@ and open the template in the editor.
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
         <link rel="stylesheet" href="../../styles/btns.css" />
-        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>    
-        <script type="text/javascript">
-        $(function()
-        {//autocomplete
-           $("#auto").autocomplete({
-                source: "search_1.php",
-                minLength: 1
-            });   
-            
-            $("#matricula").focusout(function(){
-                $.ajax({
-            url:'alumno.php',
-          type:'POST',
-          dataType:'json',
-          data:{ matricula:$('#matricula').val()}
-            }).done(function(respuesta){
-          $("#nombre").val(respuesta.nombre);
-          $("#paterno").val(respuesta.paterno);
-          $("#materno").val(respuesta.materno);
-            });
-                });
-         });
+         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />  
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>    
+<script type="text/javascript">
+$(function()
+{
+    
+    //autocomplete
+    $(".auto").autocomplete({
+        source: "search_1.php",
+        minLength: 1
+    });                
 
-        });
-        </script>
+});
+</script>
     </head>
     <body>
         <div class="mnd">
@@ -114,7 +102,7 @@ and open the template in the editor.
                          </tr>
                             <tr>
                                 <td>                                
-                                    <input type='text' name='country' value='' class='auto' placeholder="Codigo"></p>                       
+                                    <input type="text" name="country" value="" class="auto" id="auto">                       
                                 </td>
                                 <td>                                
                                     <input type="text" name="textm[]" class="form-field" placeholder="Marca"/>                       

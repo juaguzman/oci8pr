@@ -8,20 +8,20 @@ if (isset($_GET['term']))
     
       $param = $_GET['term'];
       $pr='%';
-      $pa=strtoupper($pr.$param.$pr);
+      $pa=strtoupper($param.$pr);
         $conn = oci_connect('zapateria', '5243', 'localhost/XE');
             if (!$conn) 
             {
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
             }
-          $stid = oci_parse($conn, "SELECT ID_INVENTARIO FROM INVENTARIO WHERE ID_INVENTARIO LIKE :bv");
+          $stid = oci_parse($conn, "SELECT CEDULA_CLIENTE FROM CLIENTES WHERE CEDULA_CLIENTE LIKE :bv");
           $ciudad = "NI%";  // '%' es un comodín en SQL
-          oci_bind_by_name($stid, ":bv", $pa);
+          oci_bind_by_name($stid, ':bv', $pa);
           oci_execute($stid);
           while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false)
           {
-          $return_arr[]=$row['ID_INVENTARIO'];
+          $return_arr[]=$row['CEDULA_CLIENTE'];
           }
          echo json_encode($return_arr);
 
