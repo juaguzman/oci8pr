@@ -70,7 +70,7 @@ and open the template in the editor.
                         <tr><td colspan="7">Informacion Vendedor</td></tr>
                         <tr>
                             <td colspan="3"><input type="number" name="ceduvd" placeholder="Cedula" readonly value="<?php echo $_SESSION['user_id'];?>"/></td>
-                            <td colspan="4"><input type="text" placeholder="nombrevd" readonly value="<?php echo $_SESSION['username'];?>"/></td>
+                            <td colspan="4"><input type="text"  name="usern" placeholder="nombrevd" readonly value="<?php echo $_SESSION['username'];?>"/></td>
                         </tr>
                         </thead>
                         <tbody>

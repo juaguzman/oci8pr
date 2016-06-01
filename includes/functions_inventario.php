@@ -62,7 +62,7 @@ if (!$conn) {
     //oci_bind_by_name($didbv);
     oci_execute($sql);
    
-    echo "<form action=prefactura.php>";
+    echo "<form >";
     echo "<table border='1'>\n";
     echo "<tr><td>Codigo</td><td>Marca</td><td>Modelo</td><td>Disponibles</td><td>Precio Venta</td><td>Cantidad de compra</td></tr>";
     while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
