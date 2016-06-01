@@ -1,6 +1,7 @@
+<img src="../../imagenes/BANNER.jpg" width="96%"/>
 <ul id="menu-bar">
     <li ><a href="../index.php">Home</a></li>
-    <li><a href="index.php">Inventario</a>
+    <li><a href="../inventario/index.php">Inventario</a>
  </li>
  <li><a href="../cliente/index.php">clientes</a>
   <ul>
