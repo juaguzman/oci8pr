@@ -74,7 +74,7 @@ if (!$conn) {
         echo "<td><input name=modelo[] value='$row[MODELO]' readonly /></td>"; 
         echo "<td><input name=cantidad[] value='$row[CANTIDAD]' readonly /></td>";
         echo "<td><input name=pventa[] value='$row[PRECIO_VENTA]' readonly /></td>";
-        echo "<td><input name=cantidadC[] requi /></td>";
+        echo "<td><input type=number name=cantidadC[] requi /></td>";
         echo "</tr>";
         
     }
@@ -91,27 +91,25 @@ if (!$conn) {
     
     $sql = oci_parse($conn, 'SELECT * FROM pedidos');
     oci_execute($sql);
-   
+   $sumT=0;
     echo "<table border='1'>\n";
-    echo "<tr><td>N° pedido</td><td>Distribuidor</td><td>Fecha</td><td>Cantudad</td><td>N° inventarios</td></tr>";
+    echo "<tr><td>N° pedido</td><td>Distribuidor</td><td>Fecha</td><td>Cantidad</td><td>Codigo</td><td>Valor Unt</td><td>Valor Tot</td></tr>";
     while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
 //    while (($row = oci_fetch_array($sql, OCI_ASSOC)) != false) 
-    {   
+{   
+        $sumT=$sumT+$row['VALORTOT'];
         echo "<tr>";
         echo "<td>". $row['ID_PEDIDO'].'</td>';
         echo "<td>". $row['DISTRIBUIDOR'].'</td>';
         echo "<td>". $row['FECHA'].'</td>';
         echo "<td>". $row['CANTIDAD'].'</td>';
         echo "<td>". $row['ID_INVENTARIO'].'</td>';
+        echo "<td>". $row['VALORUN'].'</td>';
+        echo "<td>". $row['VALORTOT'].'</td>';
         echo "</tr>";
         
-        //foreach ($row as $item) 
-    //{
-      //  echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "") . "</td>";
-    //}
-    //echo"<td> <a href='../inventario/pedidos.php'><img src='../../imagenes/anadir.png'></a></td>";
-    //echo "</tr>\n";
 }
+echo "<tr><td colspan=6>Total Gastos></td><td colspan=2>$sumT</td></tr>";
 echo "</table>\n";
 }
 

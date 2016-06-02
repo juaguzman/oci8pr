@@ -4,11 +4,10 @@ include_once 'conect.php';
 $error_msg = "";
 
 
-if (isset($_POST['id_p'],$_POST['dist'],$_POST['fecha'], $_POST['cant'],$_POST['id_i'])) 
+if (isset($_POST['id_p'],$_POST['dist'], $_POST['cant'],$_POST['id_i'])) 
 {
     $id_p = filter_input(INPUT_POST, 'id_p', FILTER_SANITIZE_NUMBER_INT);
     $dist = filter_input(INPUT_POST, 'dist', FILTER_SANITIZE_STRING);
-    $fecha = $_POST['fecha'];
     $cant = filter_input(INPUT_POST, 'cant', FILTER_SANITIZE_NUMBER_INT);
     $id_i = filter_input(INPUT_POST, 'id_i', FILTER_SANITIZE_STRING);
     $valu = filter_input(INPUT_POST, 'vlrunit', FILTER_SANITIZE_NUMBER_INT);

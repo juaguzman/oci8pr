@@ -76,7 +76,6 @@ if(isset($_SESSION["autentificado"]))
             <h1 class="login-title">Pedidos</h1>
             <input type="hidden" name="id_p"/><br>
             <input class="login-input" type="text" name="dist" id="dist" required placeholder="Distribuidor"/><br>
-            <input class="login-input" type='date'name='fecha' id='' required="fecha" placeholder="Fecha" /><br>
             <input class="login-input" type='number'name='cant' id='cant' required="" placeholder="Cantidad" /><br>
             <input class="login-input" type='number'name='vlrunit' id='cant' required="" placeholder="Valor Unitario" /><br>
             <input type='hidden' name='id_i' value='<?php if(isset($id)){echo $id;} ?>' />

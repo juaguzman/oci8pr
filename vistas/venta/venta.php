@@ -80,7 +80,7 @@ and open the template in the editor.
                         <tr>
                             <td><input type="number" name="ceducl" required id="auto2" placeholder="Cedula Cliente" value="<?php if(isset($cedcl)){echo $cedcl;}?>"/></td>
                             <td colspan="3"><input type="text" required name="nomcl" id="nomb" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
-                            <td colspan="2" ><input type="text" required name="dircl" id="dir" placeholder="Email"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
+                            <td colspan="2" ><input type="email" required name="dircl" id="dir" placeholder="Email"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
                             <td><input type="number" name="telcl" required placeholder="Celular" id="cel"   value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
                         </tr>
                    

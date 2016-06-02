@@ -45,7 +45,7 @@ and open the template in the editor.
     <body>
         <div class="mnd">
             <?php include './header.php';?>
-        </div>
+        
         <div class="contenidot">
             <table >
                 <tr>
@@ -67,6 +67,6 @@ and open the template in the editor.
                 </tr>
             </table>
         </div>
-        
+        </div>
     </body>
 </html>
