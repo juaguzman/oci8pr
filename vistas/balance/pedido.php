@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <?php
-session_start;
+session_start();
 if(isset($_SESSION["autentificado"]))
     {
         $fechaGuardada = $_SESSION["ultimoAcceso"]; 
@@ -36,13 +37,14 @@ if(isset($_SESSION["autentificado"]))
         <link rel="stylesheet" href="../../styles/login_style.css" />
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
+        <link rel="stylesheet" href="../../styles/tablepr.css" />
         <meta charset="UTF-8">
         <title>pedido  Zapateria</title>
     </head>
     <body>
         <div class="mnd">
             <?php include './header.php';?>
-            <div class="tbl">
+            <div class="generatecss_dot_com_table">
              <?php
                  inventario::darpedido();
              ?>

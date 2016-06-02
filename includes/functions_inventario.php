@@ -90,10 +90,6 @@ if (!$conn) {
 }
     
     $sql = oci_parse($conn, 'SELECT * FROM pedidos');
-    //$stid = oci_parse($conn, $sql);
-    //oci_execute($stid);
-    //$didbv = 60;
-    //oci_bind_by_name($didbv);
     oci_execute($sql);
    
     echo "<table border='1'>\n";
@@ -106,7 +102,7 @@ if (!$conn) {
         echo "<td>". $row['DISTRIBUIDOR'].'</td>';
         echo "<td>". $row['FECHA'].'</td>';
         echo "<td>". $row['CANTIDAD'].'</td>';
-        echo "<td>". $row['ID_DISTRIBUIDOR'].'</td>';
+        echo "<td>". $row['ID_INVENTARIO'].'</td>';
         echo "</tr>";
         
         //foreach ($row as $item) 

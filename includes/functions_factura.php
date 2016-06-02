@@ -15,17 +15,20 @@ if (!$conn) {
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
 
-$sql = oci_parse($conn, 'Select f.id_factura, f.cedula_cliente, u.nick  from facturas f INNER JOIN usuarios u on f.id_usuario=u.id_usuario');
+$sql = oci_parse($conn, 'Select f.factura_id, f.cedula_cliente, f.fecha, u.nombres  from facturas f INNER JOIN usuarios u on f.id_usuario=u.id_usuario');
 oci_execute($sql);
 
 echo "<table border='1'>\n";
-echo "<tr><td>N° de Factura</td><td>Cedula del Cliente</td><td>Nick Cliente</td></tr>";
+echo "<tr><td>N° de Factura</td><td>Cedula del Cliente</td><td>Nombre</td><td>Fecha</td><td>Opciones</td></tr>";
 while ($row = oci_fetch_array($sql, OCI_ASSOC+OCI_RETURN_NULLS)) 
 {
     echo "<tr>";
-    echo "<td>". $row['ID_FACTURA'].'</td>';
+    echo "<td>". $row['FACTURA_ID'].'</td>';
     echo "<td>". $row['CEDULA_CLIENTE'].'</td>';
-    echo "<td>". $row['NICK'].'</td>';
+    echo "<td>". $row['NOMBRES'].'</td>';
+    echo "<td>". $row['FECHA'].'</td>';
+    echo "<td><a href=../inventario/pedidos.php?Id=".$row['FACTURA_ID']."><img src=../../imagenes/ver.png></a></td>";
+    
     echo "</tr>";
 }
     echo "</table>\n";

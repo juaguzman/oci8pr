@@ -19,7 +19,7 @@ oci_execute($stid);
 
 $row = oci_fetch_object($stid);
 $sum = count($row);
-
+$fila = oci_num_rows($stid);
 if(!empty($row))
 {
     $user_id = $row -> ID_USUARIO;

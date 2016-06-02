@@ -43,13 +43,14 @@ if(isset($_SESSION["autentificado"]))
         <link rel="stylesheet" href="../../styles/login_style.css" />
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
+        <link rel="stylesheet" href="../../styles/tablepr.css" />
         <meta charset="UTF-8">
         <title>Clientes de la Zapateria</title>
     </head>
     <body>
         <div class="mnd">
             <?php include './header.php';?>
-        <div class="tbl">
+        <div class="generatecss_dot_com_table">
             <?php
             factura::darFactura();
              ?>

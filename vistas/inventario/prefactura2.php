@@ -55,20 +55,21 @@ and open the template in the editor.
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
         <link rel="stylesheet" href="../../styles/btns.css" />
+        <link rel="stylesheet" href="../../styles/tablepr.css" />
         <meta charset="UTF-8">
         <title>Sistema de Facturacion</title>
     </head>
     <body>
          <div class="mnd">
             <?php include './header.php';?>
-             <div class="tbl">
-                 <form>
+             <div class="generatecss_dot_com_table">
+                 <form action="facturafin.php" method="POST">
         <table>
             <thead>
                 <tr><td colspan="4">Factura Final</td></tr>
                 <tr><td colspan="2">Cedula vendedor</td><td colspan="2">Usuario</td></tr>
                 <tr><td colspan="2"><input value="<?php echo $ceduvd; ?>" name="cedvd" readonly/></td>
-                    <td colspan="2"><input value="<?php echo $usern; ?>" name="cedvd" readonly/></td></tr>
+                    <td colspan="2"><input value="<?php echo $usern; ?>" name="usu" readonly/></td></tr>
             </thead>
             <tbody>
             <tr>
@@ -104,7 +105,7 @@ and open the template in the editor.
                             ?>
                             <input type="hidden" value="<?php echo "$idV[$i]";?>" name="ids[]" />
                             <input type="hidden" value="<?php echo "$canti[$i]";?>" name="cant[]"/>
-                            <input type="hidden" value="<?php echo "$sumpar[$i]";?>" name="totpar[]" />
+                            <input type="hidden" value="<?php echo "$sumpar";?>" name="totpar[]" />
                             <?php
                             $sumpar=0;
                             echo "</tr>";
@@ -115,6 +116,7 @@ and open the template in the editor.
                  <input type="hidden" value="<?php echo "$sumtot";?>" name="tot" />
             </tfoot>
         </table>
+                     <input type="submit" value="Fin Venta" class="login-button">
             </form>
                  </div>
      </div>

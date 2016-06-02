@@ -41,6 +41,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../../styles/login_style.css" />
         <link rel="stylesheet" href="../../styles/mndstyle.css" />
         <link rel="stylesheet" href="../../styles/menuvar.css" />
+        <link rel="stylesheet" href="../../styles/tablepr.css" />
         <link rel="stylesheet" href="../../styles/btns.css" />
            <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />  
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -65,7 +66,7 @@ and open the template in the editor.
         <div class="mnd">
             <?php include './header.php';?>
             <form action="prefactura2.php" method="POST">
-                <div class="tbl">
+                <div class="generatecss_dot_com_table">
                     <table>
                         <thead>
                         <tr><td colspan="7">Informacion Vendedor</td></tr>
@@ -79,7 +80,7 @@ and open the template in the editor.
                         <tr>
                             <td><input type="number" name="ceducl" required id="auto2" placeholder="Cedula Cliente" value="<?php if(isset($cedcl)){echo $cedcl;}?>"/></td>
                             <td colspan="3"><input type="text" required name="nomcl" id="nomb" placeholder="Nombre Cliente" value="<?php  if(isset($nombrecl)){echo $nombrecl;}?>"/></td>
-                            <td colspan="2" ><input type="text" required name="dircl" id="dir" placeholder="Direccion"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
+                            <td colspan="2" ><input type="text" required name="dircl" id="dir" placeholder="Email"    value="<?php if(isset($dircl)){echo $dircl;}?>"/></td>
                             <td><input type="number" name="telcl" required placeholder="Celular" id="cel"   value="<?php if(isset($telcl)){echo $telcl;}?>"/></td>
                         </tr>
                    
